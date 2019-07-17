@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+
+                 
+                            
+                                                                                  
+
+           
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:tag="layout/view_fragment_library_header_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:tag="binding_1"                    
+            android:id="@+id/rl_view_fragment_library_header_music_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+
+            <ImageView
+                android:id="@+id/iv_item_fragment_library_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/ic_localsongs" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_item_fragment_library_icon"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp"
+                    android:text="@string/local_songs" />
+
+                <TextView
+                    android:tag="binding_2"                    
+                    android:id="@+id/tv_view_fragment_library_header_music_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#ff777777"
+                    android:textSize="14sp"
+                    tools:text="12 songs" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:tag="binding_3"                    
+            android:id="@+id/rl_view_fragment_library_header_video_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+
+            <ImageView
+                android:id="@+id/iv_item_fragment_library_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/ic_localvideos" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_item_fragment_library_image"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp"
+                    android:text="@string/local_videos" />
+
+                <TextView
+                    android:tag="binding_4"                    
+                    android:id="@+id/tv_view_fragment_library_header_video_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#ff777777"
+                    android:textSize="14sp"
+                    tools:text="12 songs" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_view_fragment_library_header_list_number"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="My Playlist (2)"
+            android:textColor="#ffffffff"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+         

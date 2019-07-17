@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                   
+
+    
+
+                 
+                            
+                                                                 
+                                          
+
+           
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="13dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="13dp" android:tag="layout/item_activity_lark_player_navigation_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+        <ImageView
+            android:id="@+id/iv_item_activity_home_navigation_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="binding_1"          />
+
+
+        <TextView
+            android:tag="binding_2"         
+            android:layout_marginRight="30dp"
+            android:id="@+id/tv_item_activity_home_navigation_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            tools:text="Great Apps" />
+
+
+        <TextView
+            android:tag="binding_3"                                        
+            android:id="@+id/tv_item_activity_home_navigation_timer"
+            android:gravity="center"
+            android:drawablePadding="1dp"
+            android:drawableLeft="@drawable/ic_navigation_timer_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff777777"
+            android:textSize="12sp"
+            tools:text="01:15:00" />
+
+
+    </LinearLayout>
+         

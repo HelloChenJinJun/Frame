@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chen.larkplayer.test" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="28" />
+
+    <instrumentation
+        android:name="androidx.test.runner.AndroidJUnitRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for com.chen.larkplayer.test"
+        android:targetPackage="com.chen.larkplayer.test" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 监听网络变化的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity android:name="com.chen.larkplayer.mvvm.main.LarkPlayerActivity" />
+
+        <meta-data
+            android:name="com.chen.larkplayer.base.LarkApp"
+            android:value="IModuleConfig" />
+
+        <receiver android:name="com.example.commonlibrary.receiver.ScreenNotificationReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.example.commonlibrary.mvvm.view.HolderActivity" />
+
+        <service android:name="com.example.commonlibrary.widget.manager.music.base.MusicService" >
+            <intent-filter>
+                <action android:name="com.example.music.PRE" />
+                <action android:name="com.example.music.PLAY" />
+                <action android:name="com.example.music.NEXT" />
+                <action android:name="com.example.music.CANCEL" />
+            </intent-filter>
+        </service>
+        <service android:name="com.example.commonlibrary.net.download.DownloadService" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
+
+        <activity
+            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
+            android:process=":error_activity" />
+
+        <provider
+            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
+            android:authorities="com.chen.larkplayer.test.customactivityoncrashinitprovider"
+            android:exported="false"
+            android:initOrder="101" />
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.chen.larkplayer.test.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

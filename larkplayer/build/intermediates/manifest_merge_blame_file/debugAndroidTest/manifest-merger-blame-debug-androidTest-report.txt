@@ -1,0 +1,162 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.chen.larkplayer.test" >
+4
+5    <uses-sdk
+5-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:5:5-74
+6        android:minSdkVersion="16"
+6-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:5:15-41
+7        android:targetSdkVersion="28" />
+7-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:11:5-15:74
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:11:22-76
+11        android:functionalTest="false"
+11-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:13:22-53
+13        android:label="Tests for com.chen.larkplayer.test"
+13-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:15:22-72
+14        android:targetPackage="com.chen.larkplayer.test" />
+14-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:12:22-70
+15
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+16-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+17-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-80
+17-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-77
+18    <uses-permission android:name="android.permission.INTERNET" /> <!-- 监听网络变化的权限 -->
+18-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-67
+18-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-64
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-79
+19-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:22-76
+20    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+20-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-79
+20-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-76
+21    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+21-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-76
+21-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:22-73
+22    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+22-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-76
+22-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:22-73
+23    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+23-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:5-77
+23-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:22-74
+24
+25    <application
+25-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:7:5-9:19
+26        android:allowBackup="true"
+26-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-35
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0aa8a45cc3c672474a2e0147389d5cbd/core-1.0.0/AndroidManifest.xml:22:18-86
+28        android:debuggable="true"
+28-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:7:18-43
+29        android:icon="@mipmap/ic_launcher"
+29-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-43
+30        android:label="@string/app_name"
+30-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-54
+32        android:supportsRtl="true" >
+32-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:9-35
+33        <uses-library android:name="android.test.runner" />
+33-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:8:9-60
+33-->/Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6011188322729787209.xml:8:23-57
+34
+35        <activity android:name="com.chen.larkplayer.mvvm.main.LarkPlayerActivity" />
+35-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-85
+35-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:19-82
+36
+37        <meta-data
+37-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:45
+38            android:name="com.chen.larkplayer.base.LarkApp"
+38-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-60
+39            android:value="IModuleConfig" />
+39-->[__tested_artifact__::larkplayer] /Users/apple/AndroidStudioProjects/Frame/larkplayer/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-42
+40
+41        <receiver android:name="com.example.commonlibrary.receiver.ScreenNotificationReceiver" >
+41-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:9-30:20
+41-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:19-95
+42            <intent-filter>
+42-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:13-29:29
+43                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+43-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:17-79
+43-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:25-76
+44            </intent-filter>
+45        </receiver>
+46
+47        <activity android:name="com.example.commonlibrary.mvvm.view.HolderActivity" />
+47-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:32:9-87
+47-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:32:19-84
+48
+49        <service android:name="com.example.commonlibrary.widget.manager.music.base.MusicService" >
+49-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:34:9-41:19
+49-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:34:18-97
+50            <intent-filter>
+50-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:35:13-40:29
+51                <action android:name="com.example.music.PRE" />
+51-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:17-64
+51-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:25-61
+52                <action android:name="com.example.music.PLAY" />
+52-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:17-65
+52-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:25-62
+53                <action android:name="com.example.music.NEXT" />
+53-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:17-65
+53-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:25-62
+54                <action android:name="com.example.music.CANCEL" />
+54-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:17-67
+54-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:25-64
+55            </intent-filter>
+56        </service>
+57        <service android:name="com.example.commonlibrary.net.download.DownloadService" />
+57-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:9-90
+57-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:18-87
+58
+59        <meta-data
+59-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:44:9-46:35
+60            android:name="android.max_aspect"
+60-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:45:13-46
+61            android:value="2.1" />
+61-->[:commonlibrary] /Users/apple/AndroidStudioProjects/Frame/commonlibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:46:13-32
+62
+63        <service
+63-->[androidx.room:room-runtime:2.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/226e572bdad93d701769c04da7d58ed2/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+64            android:name="androidx.room.MultiInstanceInvalidationService"
+64-->[androidx.room:room-runtime:2.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/226e572bdad93d701769c04da7d58ed2/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+65            android:exported="false" />
+65-->[androidx.room:room-runtime:2.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/226e572bdad93d701769c04da7d58ed2/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+66
+67        <activity
+67-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:12:9-14:49
+68            android:name="cat.ereza.customactivityoncrash.activity.DefaultErrorActivity"
+68-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:13:13-89
+69            android:process=":error_activity" />
+69-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:14:13-46
+70
+71        <provider
+71-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:16:9-20:39
+72            android:name="cat.ereza.customactivityoncrash.provider.CaocInitProvider"
+72-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:17:13-85
+73            android:authorities="com.chen.larkplayer.test.customactivityoncrashinitprovider"
+73-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:18:13-85
+74            android:exported="false"
+74-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:19:13-37
+75            android:initOrder="101" />
+75-->[cat.ereza:customactivityoncrash:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/553b5ad11c83f6b5fb36b6ef90d76b00/jetified-customactivityoncrash-2.2.0/AndroidManifest.xml:20:13-36
+76        <provider
+76-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1abdbc9ea94f5ff7734e7766ea124d98/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+77            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+77-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1abdbc9ea94f5ff7734e7766ea124d98/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+78            android:authorities="com.chen.larkplayer.test.lifecycle-process"
+78-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1abdbc9ea94f5ff7734e7766ea124d98/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+79            android:exported="false"
+79-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1abdbc9ea94f5ff7734e7766ea124d98/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+80            android:multiprocess="true" />
+80-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1abdbc9ea94f5ff7734e7766ea124d98/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+81    </application>
+82
+83</manifest>

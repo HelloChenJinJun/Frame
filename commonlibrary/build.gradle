@@ -1,0 +1,113 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    greendao {
+        //指定数据库schema版本号，迁移等操作会用到
+        schemaVersion 1
+
+        //DaoSession、DaoMaster以及所有实体类的dao生成的目录,默认为你的entity所在的包名
+        //daoPackage 包名
+        daoPackage 'com.example.commonlibrary.bean.greendao'
+
+        //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
+        //工程路径
+        targetGenDir 'src/main/java'
+    }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api rootProject.ext.dependencies.design
+    api(rootProject.ext.dependencies.support_v4) {
+        exclude module: "support-annotations"
+    }
+    api rootProject.ext.dependencies.annotations
+    api rootProject.ext.dependencies.rxjava2
+    api(rootProject.ext.dependencies.rxjava2_android) {
+        exclude module: "rxjava"
+    }
+    api(rootProject.ext.dependencies.retrofit) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    api(rootProject.ext.dependencies.retrofit_converter_gson) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    api(rootProject.ext.dependencies.retrofit_adapter_rxjava2) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+    api 'com.squareup.okhttp3:logging-interceptor:3.12.1' //retrofit的log日志
+    api 'com.orhanobut:logger:2.2.0'
+    api 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    api 'jp.wasabeef:glide-transformations:4.0.1'
+
+
+    api rootProject.ext.dependencies.greenDao
+    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies.glide
+    api rootProject.ext.dependencies.dagger2
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    api rootProject.ext.dependencies.transformations
+    api 'androidx.multidex:multidex:2.0.1'
+}
+
+
+

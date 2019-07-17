@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                  
+                                                        
+
+    
+                 
+                            
+                                                                                 
+
+                                                                 
+
+           
+
+    <LinearLayout
+                                                   
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="11dp" android:tag="layout/item_fragment_local_video_list_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="54dp">
+
+            <ImageView
+                android:tag="binding_1"                       
+                android:id="@+id/iv_item_fragment_local_video_list_image"
+                android:background="@color/grey_500"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:tag="binding_2"                                                
+                android:id="@+id/tv_item_fragment_local_video_list_time"
+                android:padding="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_black_circle_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="11:04"
+                android:textColor="#ffffffff"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:tag="binding_3"                        
+                android:id="@+id/tv_item_fragment_local_video_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="You Made me bla blabbbsd"
+                android:textColor="#ffffffff"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:tag="binding_4"                             
+                android:id="@+id/tv_item_fragment_local_video_list_size"
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1280x720"
+                android:textColor="#ffaaaaaa"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:tag="binding_5"                    
+            android:id="@+id/iv_item_fragment_local_video_list_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_right_more" />
+
+
+    </LinearLayout>
+         

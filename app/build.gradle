@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/rxjava.PROPERTIES'
+        exclude 'META-INF/RXJAVA.properties'
+        exclude 'META-INF/RXJAVA.PROPERTIES'
+        exclude 'META-INF/rxjava'
+        exclude 'META-INF/RXJAVA'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/maven/com.squareup.okhttp3/okhttp/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okhttp3/okhttp/pom.properties'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+        exclude 'META-INF/maven/com.google.code.gson/gson/pom.xml'
+        exclude 'META-INF/maven/com.google.code.gson/gson/pom.properties'
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'chen'
+            keyPassword '3929249'
+            storeFile file('frame.jks')
+            storePassword '3929249'
+        }
+    }
+
+
+
+    greendao {
+        //指定数据库schema版本号，迁移等操作会用到
+        schemaVersion 1
+
+        //DaoSession、DaoMaster以及所有实体类的dao生成的目录,默认为你的entity所在的包名
+        //daoPackage 包名
+        daoPackage 'com.example.frame.bean.greendao'
+
+        //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
+        //工程路径
+        targetGenDir 'src/main/java'
+    }
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        if (!rootProject.ext.isAlone) {
+            applicationId "com.example.frame"
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'arm64-v8a'
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    implementation project(':commonlibrary')
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    testImplementation 'junit:junit:4.12'
+}

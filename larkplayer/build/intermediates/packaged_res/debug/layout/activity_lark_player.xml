@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+                                                               
+
+    
+
+                 
+                            
+                                                                       
+
+           
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start" android:tag="layout/activity_lark_player_0" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:background="@color/sk_content_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.appbar.AppBarLayout
+                    android:background="@color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    android:orientation="vertical" android:tag="binding_1">
+                    <include layout="@layout/header_layout"/>
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tl_activity_lark_player_tab"
+                        style="@style/MainTab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabMode="fixed"
+                        app:tabPaddingEnd="7dp"
+                        app:tabPaddingStart="7dp"
+                        app:tabSelectedTextColor="#64DB79"
+                        app:tabTextColor="#777777"/>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/wvp_activity_lark_player_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+                <FrameLayout
+                    app:layout_behavior="com.chen.larkplayer.widget.FooterBehavior"
+                    android:id="@id/fragment_container_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"/>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:tag="binding_2"                    
+            android:id="@+id/rcv_activity_lark_player_display"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/sk_content_bg"
+            tools:visibility="gone"/>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+         
