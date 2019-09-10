@@ -322,7 +322,7 @@ public class BaseWrappedViewHolder extends RecyclerView.ViewHolder {
 
     public BaseWrappedViewHolder setBold(int id) {
         View view = getView(id);
-        if (view != null && view instanceof TextView) {
+        if ( view instanceof TextView) {
             ((TextView) view).setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         }
         return this;

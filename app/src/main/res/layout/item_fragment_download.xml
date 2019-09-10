@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:padding="10dp"
+              android:layout_height="wrap_content">
+
+
+    <ImageView android:layout_width="80dp" android:layout_height="80dp"
+               android:id="@+id/iv_item_fragment_download_cover"/>
+
+
+    <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/tv_item_fragment_music_download_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Shake It Off"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+        />
+
+        <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/tv_item_fragment_music_download_desc"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Theme Park - Love Story - 5:30"
+                android:textColor="#ff777777"
+                android:textSize="12sp"/>
+
+
+        <SeekBar
+                android:thumb="@drawable/seek_thumb"
+                android:max="100"
+                android:id="@+id/sb_item_fragment_download_seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:maxHeight="1.5dp"
+                android:minHeight="1.5dp"
+                android:progressDrawable="@drawable/seek_progress"/>
+    </LinearLayout>
+
+    <Button
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/btn_item_fragment_music_download_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="download"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+    />
+
+
+
+
+</LinearLayout>

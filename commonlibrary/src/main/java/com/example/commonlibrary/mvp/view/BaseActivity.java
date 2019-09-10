@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -11,20 +12,24 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import butterknife.ButterKnife;
+
 import com.example.commonlibrary.BaseApplication;
 import com.example.commonlibrary.R;
 import com.example.commonlibrary.adaptScreen.IAdaptScreen;
 import com.example.commonlibrary.dagger.component.AppComponent;
 import com.example.commonlibrary.mvp.presenter.BasePresenter;
+import com.example.commonlibrary.utils.AppUtil;
 import com.example.commonlibrary.utils.CommonLogger;
 import com.example.commonlibrary.utils.Constant;
 import com.example.commonlibrary.utils.StatusBarUtil;
 import com.example.commonlibrary.utils.ToastUtils;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
+import com.example.commonlibrary.widget.GlobalViewManager;
 
 import javax.inject.Inject;
+
+import butterknife.ButterKnife;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 
 /**
@@ -45,6 +50,7 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
     protected View root;
     protected View header;
     protected View statusView;
+    private GlobalViewManager.IShow show;
 
 
     protected void addDisposable(Disposable disposable) {
@@ -74,7 +80,7 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
 
     @Override
     public boolean cancelAdapt() {
-        return false;
+        return true;
     }
 
 
@@ -89,33 +95,42 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
     protected P presenter;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         setContentView(getContentLayout());
-        root= ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
-        header=root.findViewById(R.id.header_layout_id);
+        root = ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
+        header = root.findViewById(R.id.header_layout_id);
         if (needStatusPadding()) {
             if (header != null) {
-                LinearLayout linearLayout=new LinearLayout(this);
-                linearLayout.setOrientation(LinearLayout.VERTICAL);
-                linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
-                statusView=new View(this);
-                statusView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,StatusBarUtil.getStatusBarHeight(this)));
+                ViewGroup parent = (ViewGroup) header.getParent();
+                View insertView;
+                int index = parent.indexOfChild(header);
+                statusView = new View(this);
+                statusView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, StatusBarUtil.getStatusBarHeight(this)));
                 statusView.setBackground(header.getBackground());
-                linearLayout.addView(statusView);
-                ViewGroup parent= (ViewGroup) header.getParent();
-                int index=parent.indexOfChild(header);
-                parent.removeView(header);
-                linearLayout.addView(header);
-                parent.addView(linearLayout,index);
-            }else {
+                if (parent instanceof LinearLayout) {
+                    if (index != 0) {
+                        index--;
+                    }
+                    insertView = statusView;
+                } else {
+                    LinearLayout linearLayout = new LinearLayout(this);
+                    linearLayout.setOrientation(LinearLayout.VERTICAL);
+                    linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                    linearLayout.addView(statusView);
+                    index = parent.indexOfChild(header);
+                    parent.removeView(header);
+                    linearLayout.addView(header);
+                    insertView = linearLayout;
+                }
+                parent.addView(insertView, index);
+            } else {
                 StatusBarUtil.setStatusPadding(root);
             }
         }
-        if (header != null&&header instanceof Toolbar) {
+        if (header != null && header instanceof Toolbar) {
             setSupportActionBar((Toolbar) header);
         }
         ButterKnife.bind(this);
@@ -125,17 +140,25 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
             presenter.attachView(this);
         }
         initData();
-        updateStatusBar();
+//        设置全屏
+        StatusBarUtil.setTranslucentForImageViewInFragment(this, 0, null);
+        show = GlobalViewManager.getInstance().wrap((ViewGroup) root, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRetryClick(v);
+            }
+        });
     }
 
 
 
-    protected void initDagger(){
-
+    protected void onRetryClick(View view){
     }
 
 
+    protected void initDagger() {
 
+    }
 
 
     protected abstract int getContentLayout();
@@ -144,37 +167,13 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
 
     protected abstract void initData();
 
-
-
-
-
-    protected void updateStatusBar() {
-        StatusBarUtil.setTranslucentForImageViewInFragment(this, 0,null);
-    }
-
-//    private View getPaddingView() {
-//        if (needStatusPadding()) {
-//         ViewGroup headerView=findViewById(R.id.header_layout_id);
-//            return headerView!=null?headerView:((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
-//        }
-//        return null;
-//    }
-
     protected boolean needStatusPadding() {
         return true;
     }
 
-
-
-
-
-
-
     public void showLoadDialog(final String message) {
         ToastUtils.showShortToast(message);
     }
-
-
 
     public void addOrReplaceFragment(Fragment fragment) {
         addOrReplaceFragment(fragment, 0);
@@ -234,7 +233,7 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
             fragmentTransaction.replace(backStackLayoutId, fragment);
             for (View item :
                     views) {
-                if (item!=null) {
+                if (item != null) {
                     fragmentTransaction.addSharedElement(item, ViewCompat.getTransitionName(item));
                 }
             }
@@ -251,11 +250,12 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
 
     @Override
     public void showLoading(String loadMessage) {
-        showLoadDialog(loadMessage);
+        show.showLoading(GlobalViewManager.STATE_LOADING);
     }
 
     @Override
     public void hideLoading() {
+        show.showLoading(GlobalViewManager.STATE_HIDE);
     }
 
 
@@ -263,12 +263,17 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
     public void showError(String errorMsg) {
         ToastUtils.showShortToast(errorMsg);
         CommonLogger.e(errorMsg);
+        if (!AppUtil.isNetworkAvailable()) {
+            show.showLoading(GlobalViewManager.STATE_NO_NET);
+        } else {
+            show.showLoading(GlobalViewManager.STATE_SEVER_ERROR);
+        }
     }
 
 
     @Override
     public void showEmptyView() {
-
+        show.showLoading(GlobalViewManager.STATE_NO_DATA);
     }
 
 
@@ -285,7 +290,9 @@ public abstract class BaseActivity<T, P extends BasePresenter> extends AppCompat
             compositeDisposable.clear();
             compositeDisposable = null;
         }
-
+        if (show != null) {
+            show.onDestroy();
+        }
     }
 
 

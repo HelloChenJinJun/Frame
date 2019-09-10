@@ -3,7 +3,6 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/white"
-
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -14,13 +13,13 @@
         android:scaleType="centerInside" />
 
     <TextView
-        android:layout_centerInParent="true"
         android:id="@+id/tv_empty_error_retry"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_empty_error_image"
         android:layout_marginTop="10dp"
-        android:text="网络加载失败，请点击重试"
+        android:text="服务器出错啦啦,点击重试"
         android:textColor="@color/base_color_text_black"
         android:textSize="20sp" />
 </RelativeLayout>

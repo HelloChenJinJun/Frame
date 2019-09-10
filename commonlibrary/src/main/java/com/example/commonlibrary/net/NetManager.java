@@ -64,7 +64,9 @@ public class NetManager {
     public static NetManager getInstance() {
         if (instance == null) {
             synchronized (NetManager.class) {
-                instance = new NetManager();
+                if (instance==null) {
+                    instance = new NetManager();
+                }
             }
         }
         return instance;

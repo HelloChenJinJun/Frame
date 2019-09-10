@@ -1,5 +1,11 @@
 package com.example.commonlibrary.net.download;
 
+import android.os.Handler;
+import android.os.Looper;
+
+import com.example.commonlibrary.utils.CommonLogger;
+
+import java.io.Closeable;
 import java.net.FileNameMap;
 import java.net.URLConnection;
 
@@ -35,5 +41,23 @@ public class DownloadUtil {
             }
         }
         return null;
+    }
+
+
+
+    public static void close(Closeable closeable){
+        if (closeable == null) return;
+        try {
+            closeable.close();
+        } catch (Exception e) {
+            CommonLogger.printStackTrace(e);
+        }
+    }
+
+
+    private static Handler mainHandler=new Handler(Looper.getMainLooper());
+
+    public static void runOnUiThread(Runnable runnable){
+        mainHandler.post(runnable);
     }
 }

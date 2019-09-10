@@ -22,12 +22,12 @@ public class EmptyView extends BaseEmptyView {
 
     @Override
     public int getErrorViewLayoutId() {
-        return R.layout.view_empty_no_net;
+        return R.layout.view_empty_sever_error;
     }
 
     @Override
     public int getNoDataViewLayoutId() {
-        return R.layout.view_empty_no_net;
+        return R.layout.view_empty_no_data;
     }
 
     @Override
